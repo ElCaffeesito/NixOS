@@ -30,7 +30,6 @@
     ../../modules/programs/cli/lazygit
     ../../modules/programs/cli/cava
     ../../modules/programs/cli/btop
-    ../../modules/programs/cli/git/default.nix
     ../../modules/programs/shell/bash
     ../../modules/programs/shell/zsh
     ../../modules/programs/media/discord
@@ -44,6 +43,16 @@
     ../../modules/programs/misc/lact # GPU fan, clock and power configuration
     # ../../modules/programs/misc/nix-ld
     # ../../modules/programs/misc/virt-manager
+  ];
+
+  fileSystems."/home/coffee/Games" = {
+    device = "/dev/disk/by-uuid/dfaf1cf8-7c7a-4039-947e-04a5efb52db5";
+    fsType = "ext4";
+    options = [ "defaults" "noatime" ];
+  };
+
+  systemd.tmpfiles.rules = [
+    "d /home/coffee/Games 0755 coffee coffee -"
   ];
 
   # Home-manager config

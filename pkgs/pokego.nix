@@ -23,7 +23,7 @@ buildGoModule {
   ];
 
   meta = with lib; {
-    description = "Command-line tool that lets you display Pokémon sprites in color directly in your terminal.";
+    description = "Command-line tool that lets you display Pokemon sprites in color directly in your terminal.";
     homepage = "https://github.com/rubiin/pokego";
     mainProgram = "pokego";
     license = licenses.gpl3;

@@ -17,8 +17,9 @@
     lutris
     heroic
     # bottles
-    # ryujinx
-    # prismlauncher
+    ryujinx
+    prismlauncher
+    protonup-qt
 
     steam-run
     wineWowPackages.staging

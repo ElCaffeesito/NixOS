@@ -512,21 +512,21 @@
           monitor=,preferred,auto,1
 
           # 1080p-HDR monitor on the left, 4K-HDR monitor in the middle and 1080p vertical monitor on the right.
-          monitor=desc:BNQ BenQ EW277HDR 99J01861SL0,preferred,-1920x0,1
-          monitor=desc:BNQ BenQ EL2870U PCK00489SL0,preferred,0x0,2
-          monitor=desc:BNQ BenQ xl2420t 99D06760SL0,preferred,1920x0,1,transform,1 # 5 for fipped
+          monitor= DP-2, 1920x1080@143.98, 1080x0, 1
+	  monitor= HDMI-A-4, 1920x1080@60, 0x0, 1, transform, 1
+	  monitor= HDMI-A-3, 1920x1080@144, -1920x0, 1
 
           # Binds workspaces to my monitors only (find desc with: hyprctl monitors)
-          workspace=1,monitor:desc:BNQ BenQ EL2870U PCK00489SL0,default:true
-          workspace=2,monitor:desc:BNQ BenQ EL2870U PCK00489SL0
-          workspace=3,monitor:desc:BNQ BenQ EL2870U PCK00489SL0
-          workspace=4,monitor:desc:BNQ BenQ EL2870U PCK00489SL0
-          workspace=5,monitor:desc:BNQ BenQ EW277HDR 99J01861SL0,default:true
-          workspace=6,monitor:desc:BNQ BenQ EW277HDR 99J01861SL0
-          workspace=7,monitor:desc:BNQ BenQ EW277HDR 99J01861SL0
-          workspace=8,monitor:desc:BNQ BenQ xl2420t 99D06760SL0,default:true
-          workspace=9,monitor:desc:BNQ BenQ xl2420t 99D06760SL0
-          workspace=10,monitor:desc:BNQ BenQ EL2870U PCK00489SL0
+          workspace=1,monitor:DP-2, default:true
+          workspace=2,monitor:DP-2
+          workspace=3,monitor:DP-2
+          workspace=4,monitor:DP-2
+          workspace=5,monitor:HDMI-A-4, default:true
+          workspace=6,monitor:HDMI-A-4
+          workspace=7,monitor:HDMI-A-3, default:true
+          workspace=8,monitor:HDMI-A-3
+          workspace=9,monitor:HDMI-A-3
+          workspace=10,monitor:HDMI-A-3
         '';
       };
     })

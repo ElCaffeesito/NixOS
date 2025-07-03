@@ -214,6 +214,19 @@
     };
   };
 
+  # Setup git
+  programs.git = {
+    enable = true;
+    config = {
+      user.name = "ElCaffeesito";
+      user.email = "elcaffeesito777@gmail.com";
+      init.defaultBranch = "main";
+      pull.rebase = "false"; # o true si prefieres rebase por default
+      credential.helper = "cache"; # o "store" si prefieres persistencia
+    };
+  };
+
+
   services.xserver.enable = true; # Enable the X11 windowing system.
 
   # Enable touchpad support (enabled default in most desktopManager).

@@ -59,9 +59,19 @@
   home-manager.sharedModules = [
     (_: {
       home.packages = with pkgs; [
+	obsidian
+	davinci-resolve
         # pokego # Overlayed
         # krita
         github-desktop
+	bottles
+	vlc
+	(pkgs.wrapOBS {
+         plugins = with pkgs.obs-studio-plugins; [
+           wlrobs
+           obs-pipewire-audio-capture
+         ];
+        })
         # gimp
       ];
     })
@@ -69,7 +79,17 @@
 
   # Define system packages here
   environment.systemPackages = with pkgs; [
+    obsidian
+    ani-cli
+    obs-studio
   ];
+
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      obs-pipewire-audio-capture
+    ];
+  };
 
   networking.hostName = hostname; # Set hostname defined in flake.nix
 

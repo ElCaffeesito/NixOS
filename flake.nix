@@ -37,11 +37,16 @@
       url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fastanime = {
+      url = "github.com/Benexl/FastAnime";
+      flake = false;
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
+    fastanime,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -78,7 +83,9 @@
       Default = nixpkgs.lib.nixosSystem {
         system = forAllSystems (system: system);
         specialArgs = {inherit self inputs outputs;} // settings;
-        modules = [./hosts/Default/configuration.nix];
+        modules = [
+          ./hosts/Default/configuration.nix
+        ];
       };
     };
   };
